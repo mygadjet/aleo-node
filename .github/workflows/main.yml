@@ -2,7 +2,7 @@ name: Aleo test
 
 on:
   schedule:
-    - cron: '1 1 * * *'
+    - cron: '1 6 * * *'
 
 jobs:
   make-contribution:
@@ -14,14 +14,13 @@ jobs:
           fetch-depth: 0
       - name: Make daily contribution
         run: |
-          echo " - " >> go.sh
           echo "$(date)" >> go.sh
           echo " - " >> go.sh
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          author_name: "NAME"
-          author_email: "EMAIL"
+          author_name: "mygadjet"
+          author_email: "azadornova2@gmail.com"
           message: "test"
           add: "go.sh"
       - name: Push changes
